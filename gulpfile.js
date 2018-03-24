@@ -1,8 +1,8 @@
 var gulp = require("gulp")
 var gulpYaml = require("gulp-yaml")
 
-var quoteFiles = __dirname +  "/quote-src/**/*.yml"
-var targetDir = __dirname + "/public/quotes/"
+var quoteFiles = __dirname +  "/quotes/**/*.yml"
+var targetDir = __dirname + "/dist/"
 
 gulp.task('build', () => {
 	return gulp.src(quoteFiles)
