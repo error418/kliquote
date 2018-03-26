@@ -5,21 +5,27 @@ var logger = require('morgan');
 
 var quoteRouter = require('./routes/quote');
 
-var fs = require("fs")
+var glob = require("glob")
+var path = require("path")
 var yaml = require('js-yaml');
+var fs = require("fs")
 
 var app = express();
 
-var quoteDirectory = "./quotes/"
+var quoteGlob = "quotes/*.yml"
 
-fs.readdirSync(quoteDirectory).forEach(file => {
-    try {
-        var content = yaml.safeLoad(fs.readFileSync(quoteDirectory + file), 'utf-8')
-        app.locals[content.name] = content.quotes
-    } catch (err) {
-        console.log(err)
-    }
-})
+glob.sync(quoteGlob)
+    .forEach(file => {
+        var filename = path.basename(file, path.extname(file))
+        try {
+            var content = yaml.safeLoad(fs.readFileSync(file), 'utf-8')
+            app.locals[filename] = content
+
+            console.log("loaded " + filename)
+        } catch (err) {
+            console.log(err)
+        }
+    })
 
 app.use(logger('dev'));
 app.use(express.json());
