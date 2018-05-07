@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 
-/* GET home page. */
 router.get('/:quoteSource', function(req, res) {
   var pick = req.query.pick
   var quoteSource = req.params.quoteSource
