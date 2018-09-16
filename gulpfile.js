@@ -9,5 +9,3 @@ gulp.task('build', () => {
 		.pipe(gulpYaml({ schema: 'DEFAULT_SAFE_SCHEMA' }))
 		.pipe(gulp.dest(targetDir))
 })
-
-gulp.task('default', ['build'])
