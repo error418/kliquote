@@ -1,0 +1,18 @@
+<head>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    {% if site.baseurl -%}
+    <base href="{{ site.baseurl }}">
+    {% endif %}
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}" />
+
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+</head>

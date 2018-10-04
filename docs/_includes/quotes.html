@@ -1,0 +1,30 @@
+<div class="bubble-container noselect">
+    <div class="bubble">
+        <p class="quote"></p>
+        <p class="who"></p>
+    </div>
+</div>
+
+<script>
+    var quotes = {{ site.data.quotes | jsonify }};
+
+    function getRandomIndex(arr) {
+        return Math.floor(Math.random() * arr.length);
+    }
+
+    function getRandomKey(map) {
+        var keys = Object.keys(map);
+        return keys[getRandomIndex(keys)];
+    }
+
+    function showQuote() {
+        var randomAuthor = quotes[getRandomKey(quotes)],
+            quote = randomAuthor.quotes[getRandomIndex(randomAuthor.quotes)];
+
+        $(".quote").text(quote);
+        $(".who").text(randomAuthor.name);
+    }
+
+    $(document).ready(showQuote);
+    $(".bubble").click(showQuote);
+</script>

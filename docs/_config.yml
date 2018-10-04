@@ -1,0 +1,32 @@
+#data_dir: ../quotes
+
+title: Kliquote
+email: 
+description: >-
+  Kliemannsche Zitate
+baseurl: "/kliquote/" # the subpath of your site, e.g. /blog
+url: "https://error418.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: error418/kliquote
+github: https://github.com/error418/kliquote
+
+# Build settings
+sass:
+  style: compressed
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-coffeescript
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - activity-diagram.puml
+  - .vendor
