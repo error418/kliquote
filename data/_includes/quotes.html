@@ -1,12 +1,13 @@
 <div class="bubble-container noselect">
     <div class="bubble">
+        <div class="arrow bottom right"></div>
         <p class="quote"></p>
         <p class="who"></p>
     </div>
 </div>
 
 <script>
-    var quotes = {{ site.data.quotes | jsonify }};
+    var quotes = {{ site.data | jsonify }};
 
     function getRandomIndex(arr) {
         return Math.floor(Math.random() * arr.length);

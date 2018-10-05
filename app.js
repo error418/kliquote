@@ -12,7 +12,7 @@ var fs = require("fs")
 
 var app = express();
 
-var quoteGlob = "quotes/*.yml"
+var quoteGlob = "data/quotes/*.yml"
 
 glob.sync(quoteGlob)
     .forEach(file => {

@@ -22,11 +22,14 @@ Sobald Kliquote läuft kannst du die Zitate unter einer URL abrufen. Diese setzt
 http://localhost:3000/quote/[name]
 ```
 
-`name` ist hierbei der Dateiname deiner Zitatedatei im `quotes`-Verzeichnis (ohne Suffix natürlich!)
+`name` ist hierbei der Dateiname deiner Zitatedatei im `quotes`-Verzeichnis (ohne Suffix natürlich!). Das Verzeichnis findest du unter [data/quotes](./data/quotes).
 
 > Zum Beispiel: `http://localhost:3000/quote/fynn`
 
 Du bekommst als Antwort ein JSON-Objekt mit einem optionalem `name` Property, das (falls vorhanden) einen Namen für die Quote-Datei enthält, sowie ein `quotes` Property, das die Quotes als String-Array enthält.
+
+Falls ihr euch wundert was da sonst so an Zeug rumfliegt - mit Ruby und so - das sind die Jekyll-Sourcen, die für die GitHub-Seite genutzt werden. Die müssen da leider
+liegen, da sich sonst GitHub weigert auf die Zitatedateien beim Bauen der Jekyll-Seite zuzugreifen.
 
 #### Schmankerl
 

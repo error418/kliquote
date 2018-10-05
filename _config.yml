@@ -1,5 +1,15 @@
-#data_dir: ../quotes
+# Where's the stuff?
+source              : ./data
+destination         : data/_site
+collections_dir     : .
+plugins_dir         : _plugins
+layouts_dir         : _layouts
+data_dir            : quotes
+includes_dir        : _includes
 
+safe: true
+
+# General Site settings
 title: Kliquote
 email: 
 description: >-
@@ -17,9 +27,7 @@ plugins:
   - jekyll-feed
   - jekyll-coffeescript
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
+# Excludes
 exclude:
   - Gemfile
   - Gemfile.lock
