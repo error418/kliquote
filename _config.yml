@@ -1,11 +1,7 @@
 # Where's the stuff?
 source              : ./data
 destination         : data/_site
-collections_dir     : .
-plugins_dir         : _plugins
-layouts_dir         : _layouts
 data_dir            : quotes
-includes_dir        : _includes
 
 safe: true
 
