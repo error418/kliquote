@@ -1,7 +1,12 @@
 # Where's the stuff?
-source              : ./data
+source              : .
 destination         : data/_site
-data_dir            : quotes
+data_dir            : data/quotes
+
+collections_dir     : data/
+layouts_dir         : ./data/_layouts
+includes_dir        : data/_includes
+sass_dir            : data/css
 
 safe: true
 
@@ -9,9 +14,10 @@ safe: true
 title: Kliquote
 email: 
 description: >-
-  Kliemannsche Zitate
-baseurl: "/kliquote/" # the subpath of your site, e.g. /blog
-url: "https://error418.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+  Kliemann'sche Zitate. Natürlich auch mit Zitaten der Gang.
+keywords: fynn kliemann,kliemann,zitate,kliemannsland,youtube
+baseurl: /kliquote/
+url: https://error418.github.io
 github_username: error418/kliquote
 github: https://github.com/error418/kliquote
 
@@ -23,14 +29,20 @@ plugins:
   - jekyll-feed
   - jekyll-coffeescript
 
+include:
+  - data/
+  - index.html
+
 # Excludes
 exclude:
+  - node_modules/
+  - bin/
+  - .bundle/
+  - routes/
+  - dist/
+  - gulpfile.js
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - activity-diagram.puml
-  - .vendor
+  - app.js
+  - package.json
+  - package-lock.json
