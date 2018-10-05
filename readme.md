@@ -2,6 +2,8 @@
 
 Kliemann'sche Zitate inklusive API. Natürlich auch mit Zitaten der Gang.
 
+Falls du nur Zitate sehen willst kannst du das auch auf der dazugehörigen [Website](https://error418.github.io/kliquote/) tun. Alles garantiert ohne Nerdsprech. :wink:
+
 ## Für was brauch ich das?
 
 Gute Frage.. Ich möchte das Ding hier eigentlich als Chatops-Zitatequelle benutzen. Deswegen der Webservice als Beilage. Du kannst diesen Service auch als Basis für deinen eigenen Zitateservice benutzen. Alle Zitatdateien, die du unter `quotes` im yaml-Format ablegst werden vom Service publiziert.
