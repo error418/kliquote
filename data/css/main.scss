@@ -11,15 +11,13 @@ html {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: auto 100%;
-
+    background-size: cover;
+    height: 100vh;
     overflow: hidden;
-    width: 100%;
 }
 
 body {
     padding-top: 30vh;
-    height: 100vh;
 }
 
 .noselect {
