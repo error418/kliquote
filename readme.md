@@ -28,7 +28,7 @@ http://localhost:3000/quote/[name]
 
 > Zum Beispiel: `http://localhost:3000/quote/fynn`
 
-Du bekommst als Antwort ein JSON-Objekt mit einem optionalem `name` Property, das (falls vorhanden) einen Namen für die Quote-Datei enthält, sowie ein `quotes` Property, das die Quotes als String-Array enthält.
+Du bekommst als Antwort ein JSON-Objekt mit einem optionalem `name` Property, das (falls vorhanden) einen Namen für die Quote-Datei enthält, sowie ein `quotes` Property, das die Quotes als Array aus Objekten enthält. Sollte ein Array als Quote-Objekt zurückkommen handelt es sich um eine Konversation - am besten schaut ihr euch die yaml-Datei dazu einfach an :)
 
 Falls ihr euch wundert was da sonst so an Zeug rumfliegt - mit Ruby und so - das sind die Jekyll-Sourcen, die für die GitHub-Seite genutzt werden. Die müssen da leider
 liegen, da sich sonst GitHub weigert auf die Zitatedateien beim Bauen der Jekyll-Seite zuzugreifen.

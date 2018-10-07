@@ -2,34 +2,59 @@
 layout: default
 ---
 
+<div class="bubble" style="display: none">
+    <div class="arrow bottom"></div>
+    <p class="quote"></p>
+    <p class="who"></p>
+</div>
+
 <div class="bubble-container noselect">
-    <div class="bubble">
-        <div class="arrow bottom right"></div>
-        <p class="quote"></p>
-        <p class="who"></p>
-    </div>
+    
 </div>
 
 <script>
-    var quotes = {{ site.data | jsonify }};
+    var loadedQuotes = {{ site.data | jsonify }};
+
+    var quotes = [];
+
+    // build easier structure for more even distributed random picks
+    $.each(loadedQuotes, (quoteKey, quoteValue) => {
+        $.each(quoteValue.quotes, (key, value) => {
+            quotes.push(value);
+        })
+    });
 
     function getRandomIndex(arr) {
         return Math.floor(Math.random() * arr.length);
     }
 
-    function getRandomKey(map) {
-        var keys = Object.keys(map);
-        return keys[getRandomIndex(keys)];
-    }
-
     function showQuote() {
-        var randomAuthor = quotes[getRandomKey(quotes)],
-            quote = randomAuthor.quotes[getRandomIndex(randomAuthor.quotes)];
+        var quote = quotes[getRandomIndex(quotes)],
+            isConversation = Array.isArray(quote);
 
-        $(".quote").text(quote);
-        $(".who").text(randomAuthor.name);
+        $(".bubble-container").empty();
+
+        $.each(quote, (key, value) => {
+            var bubble = bubbleTemplate.clone().appendTo(".bubble-container"),
+            name = Object.keys(value)[0];
+            
+            if (isConversation) {
+                bubble.find(".quote").text(value[name]);
+                bubble.find(".who").text(name);
+            } else {
+                bubble.find(".quote").text(value);
+                bubble.find(".who").text(key);
+            }
+
+            bubble.find(".arrow")
+                .toggleClass("left", key % 2 == 1)
+                .toggleClass("right", key % 2 == 0);
+            bubble.show();
+        });
     }
+
+    var bubbleTemplate = $(".bubble");
 
     $(document).ready(showQuote);
-    $(".bubble").click(showQuote);
+    $(".bubble-container").click(showQuote);
 </script>

@@ -1,7 +1,7 @@
 name: "franzi"
 quotes:
-  - "Hör auf Alter, ich mach da nicht mit!"
-  - "Nein!"
-  - "Ey, bau mal 'n Tisch!"
-  - "Meine Beine brechen ab! Du spinnst wohl!"
-  - "Käsebrot macht Wangen rot"
+  - franzi: "Hör auf Alter, ich mach da nicht mit!"
+  - franzi: "Nein!"
+  - franzi: "Ey, bau mal 'n Tisch!"
+  - franzi: "Meine Beine brechen ab! Du spinnst wohl!"
+  - franzi: "Käsebrot macht Wangen rot"

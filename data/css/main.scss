@@ -41,6 +41,7 @@ body {
     //border: 2px solid $bubble_color;
     border-radius: 12px;
     margin: auto;
+    margin-bottom: 20px;
 
     padding: 10px 20px 4px 20px;
 
@@ -56,7 +57,14 @@ body {
             border-color: $bubble_color transparent transparent transparent;
             border-width: $bubble_pointer $bubble_pointer 0px $bubble_pointer;
             bottom: -$bubble_pointer;
-            right: 20px;
+            
+            &.right {
+                right: 20px;
+            }
+
+            &.left {
+                left: 20px;
+            }
         }
     }
 
