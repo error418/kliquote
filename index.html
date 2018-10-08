@@ -8,8 +8,10 @@ layout: default
     <p class="who"></p>
 </div>
 
-<div class="bubble-container noselect">
-    
+<div class="aligner">
+    <div class="bubble-container noselect">
+        
+    </div>
 </div>
 
 <script>
@@ -41,14 +43,15 @@ layout: default
             if (isConversation) {
                 bubble.find(".quote").text(value[name]);
                 bubble.find(".who").text(name);
+                bubble.find(".arrow")
+                    .toggleClass("left", key % 2 == 1)
+                    .toggleClass("right", key % 2 == 0);
             } else {
                 bubble.find(".quote").text(value);
                 bubble.find(".who").text(key);
+                bubble.find(".arrow").addClass("right");
             }
 
-            bubble.find(".arrow")
-                .toggleClass("left", key % 2 == 1)
-                .toggleClass("right", key % 2 == 0);
             bubble.show();
         });
     }
