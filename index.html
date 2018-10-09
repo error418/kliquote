@@ -58,6 +58,9 @@ layout: default
 
     var bubbleTemplate = $(".bubble");
 
-    $(document).ready(showQuote);
+    $(document).ready(() => {
+        showQuote();
+        window.scrollTo(0,1);
+    });
     $(".bubble-container").click(showQuote);
 </script>
