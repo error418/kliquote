@@ -14,6 +14,11 @@ layout: default
     </div>
 </div>
 
+<div class="quote-counter">
+    <span id="quoteCount" class="count"></span>
+    zitate
+</div>
+
 <script>
     var loadedQuotes = {{ site.data | jsonify }};
 
@@ -56,10 +61,21 @@ layout: default
         });
     }
 
+    function incrementCount(id, count, limit, stepTime) {
+        if (count < limit) {
+            count++;
+            $(id).html(count);
+            window.setTimeout(incrementCount, stepTime, id, count, limit);
+        }
+    }
+
+    
     var bubbleTemplate = $(".bubble");
 
     $(document).ready(() => {
         showQuote();
+        // show quoteCount
+        incrementCount("#quoteCount", 0, quotes.length, 100);
         window.scrollTo(0,1);
     });
     $(".bubble-container").click(showQuote);
